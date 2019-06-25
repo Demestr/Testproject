@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <variable name="viewModel" type="example.testproject.viewmodel.LocateViewModel"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.MainFragment" android:id="@+id/frameLayout">
+
+        <TextView
+                android:text="@{viewModel.latitude}"
+                android:id="@+id/mainLatitude"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                style="@style/textViewStyle"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.longitude}"
+                android:id="@+id/mainLongitude"
+                app:layout_constraintTop_toBottomOf="@id/mainLatitude" app:layout_constraintStart_toStartOf="parent"
+                style="@style/textViewStyle"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.address}"
+                android:id="@+id/mainAddress"
+                app:layout_constraintTop_toBottomOf="@id/mainLongitude" app:layout_constraintStart_toStartOf="parent"
+                style="@style/textViewStyle"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.weather}"
+                android:id="@+id/mainWeather"
+                app:layout_constraintTop_toBottomOf="@id/mainAddress" app:layout_constraintStart_toStartOf="parent"
+                style="@style/textViewStyle"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/messageTxt" android:layout_marginBottom="32dp"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="32dp"/>
+        <ProgressBar
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/progressBar" android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

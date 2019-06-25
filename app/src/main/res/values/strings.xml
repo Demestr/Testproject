@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Test project</string>
+    <string name="tab_table">Таблица</string>
+    <string name="tab_main">Главная</string>
+    <string name="address">Город %1$s, %2$s, %3$s</string>
+    <string name="latitude">Широта %1$f</string>
+    <string name="longitude">Долгота %1$f</string>
+</resources>

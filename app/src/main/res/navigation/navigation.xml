@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation"
+            app:startDestination="@+id/containerFragment">
+
+    <fragment android:id="@+id/mainFragment" android:name="example.testproject.fragments.MainFragment"
+              android:label="fragment_main" tools:layout="@layout/fragment_main"/>
+    <fragment android:id="@+id/tableFragment" android:name="example.testproject.fragments.TableFragment"
+              android:label="fragment_table" tools:layout="@layout/fragment_table"/>
+    <fragment android:id="@+id/detailFragment" android:name="example.testproject.fragments.DetailFragment"
+              android:label="fragment_detail" tools:layout="@layout/fragment_detail">
+        <argument android:name="locateDetail" app:argType="example.testproject.LocateData"/>
+    </fragment>
+    <fragment android:id="@+id/containerFragment" android:name="example.testproject.fragments.ContainerFragment"
+              android:label="fragment_container" tools:layout="@layout/fragment_container">
+        <action android:id="@+id/action_containerFragment_to_detailFragment" app:destination="@id/detailFragment"/>
+    </fragment>
+</navigation>

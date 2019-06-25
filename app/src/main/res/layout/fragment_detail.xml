@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="locate" type="example.testproject.LocateData"/>
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".fragments.DetailFragment" android:id="@+id/detailContainer">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailDate" app:layout_constraintEnd_toEndOf="parent"
+                android:text="@{locate.date}"
+                app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="24dp" android:textSize="16sp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailLatName"
+                android:text="Широта: "
+                app:layout_constraintTop_toBottomOf="@+id/detailDate" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" android:layout_marginTop="24dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailLat"
+                android:text="@{String.valueOf(locate.latitude)}"
+                app:layout_constraintStart_toEndOf="@id/detailLatName" android:layout_marginStart="8dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/detailLatName"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailLngName"
+                android:text="Долгота:"
+                app:layout_constraintTop_toBottomOf="@+id/detailLat" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailLng"
+                android:text="@{String.valueOf(locate.longitude)}"
+                app:layout_constraintStart_toEndOf="@id/detailLngName"
+                android:layout_marginStart="8dp" app:layout_constraintBaseline_toBaselineOf="@+id/detailLngName"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailAddress"
+                android:text="@{locate.address}"
+                app:layout_constraintTop_toBottomOf="@+id/detailLng" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailWeather"
+                android:text="@{locate.weather}"
+                app:layout_constraintTop_toBottomOf="@+id/detailAddress" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="16dp" android:layout_marginTop="16dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
